@@ -11,14 +11,14 @@ library('openxlsx')
 
 ##################### LOAD DATA FOR HIGH THR DATASET #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/transients/transients high thr.xlsx")
+data <- read.xlsx("transients/transients high thr in this repo")
 factor(data$condition) -> condition
 factor(data$mouse) -> mouse
 factor(data$recording) -> recording
 data$n_peaks -> n_peaks
 data$height -> height
 data$decay_isol_10 -> decay
-excel_file <- "E:/Calcium Imaging/stats/stats summary/figure3.xlsx"
+excel_file <- "where you want to save your results"
 wb <- createWorkbook()
 
 # in this case the grouping variable is not only mouse but also recording
@@ -32,7 +32,7 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model number of peaks")
 writeData(wb, sheet = "model number of peaks", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (might take a long time)
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "number of peaks means")
 writeData(wb, sheet = "number of peaks means", posthoc$emmeans)
@@ -46,13 +46,13 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model amplitude")
 writeData(wb, sheet = "model amplitude", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison 
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "amplitude means")
 writeData(wb, sheet = "amplitude means", posthoc$emmeans)
 addWorksheet(wb, "amplitude contrasts")
 writeData(wb, sheet = "amplitude contrasts", posthoc$contrasts)
-remove('posthoc') # too large for memory
+remove('posthoc')
 
 
 ##################### DECAY OF TRANSIENTS #####################
@@ -62,13 +62,13 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model transient decay")
 writeData(wb, sheet = "model transient decay", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "transient decay means")
 writeData(wb, sheet = "transient decay means", posthoc$emmeans)
 addWorksheet(wb, "transient decay contrasts")
 writeData(wb, sheet = "transient decay contrasts", posthoc$contrasts)
-remove('posthoc') # too large for memory
+remove('posthoc') 
 
 
 ##################### SAVE EVERYTHING TO EXCEL #####################

@@ -9,13 +9,11 @@ library('openxlsx')
 
 ##################### LOAD DATA FOR COMMUNITIES NO GAMMA #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/figure 6/communities1.xlsx")
+data <- read.xlsx("correlation/communities1 in this repo")
 condition <- factor(data$condition)
 mouse <- factor(data$mouse)
 MRCCnum_comm <- data$MRCC_num_comm
-distance <- data$ED
-
-excel_file <- "E:/Calcium Imaging/stats/stats summary/figure6 communities.xlsx"
+excel_file <- "where to save results"
 wb <- createWorkbook()
 
 ##################### MRCCnum_comm #####################
@@ -34,7 +32,7 @@ writeData(wb, sheet = "MRCCnum_comm contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR COMMUNITIES OVER GAMMA #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/figure 6/communities30.xlsx")
+data <- read.xlsx("correlation/communities30 in this repo")
 condition <- factor(data$condition)
 mouse <- factor(data$mouse)
 gamma <- factor(data$gamma)

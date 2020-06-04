@@ -11,14 +11,14 @@ library('openxlsx')
 ################## LOAD DATA FOR STANDARD TRANSIENTS ###################
 ########################################################################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/robustness/standard.xlsx")
+data <- read.xlsx("transients/integral and st_dev standard in this repo")
 condition <- factor(data$condition)
 recording <- factor(data$recording)
 mouse <- factor(data$mouse)
 integral <- data$log_integral
 st_dev <- data$log_st_dev
 
-excel_file <- "E:/Calcium Imaging/stats/stats summary/robustness.xlsx"
+excel_file <- "where you want to save your results"
 wb <- createWorkbook()
 
 ##################### INTEGRAL #####################
@@ -28,7 +28,7 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model integral")
 writeData(wb, sheet = "model integral", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (might take a long time)
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "integral means")
 writeData(wb, sheet = "integral means", posthoc$emmeans)
@@ -42,7 +42,7 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model st_dev")
 writeData(wb, sheet = "model st_dev", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "st_dev means")
 writeData(wb, sheet = "st_dev means", posthoc$emmeans)
@@ -55,7 +55,7 @@ remove('posthoc') # too large for memory
 ########################## LOAD DATA FOR Df/f ##########################
 ########################################################################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/robustness/dF_over_F.xlsx")
+data <- read.xlsx("transients/integral and st_dev dF_over_F in this repo")
 condition <- factor(data$condition)
 recording <- factor(data$recording)
 mouse <- factor(data$mouse)
@@ -69,7 +69,7 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model integral dF_over_F")
 writeData(wb, sheet = "model integral dF_over_F", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "integral dF_over_F means")
 writeData(wb, sheet = "integral dF_over_F means", posthoc$emmeans)
@@ -83,13 +83,13 @@ anova(model) # test it using lmerTest way (ANOVA with Satterthwaite's method)
 addWorksheet(wb, "model st_dev dF_over_F")
 writeData(wb, sheet = "model st_dev dF_over_F", anova(model))
 
-posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison (takes a long time)
+posthoc <- emmeans(model, pairwise ~ condition) # post-hoc comparison
 summary(posthoc) # print the post-hoc results
 addWorksheet(wb, "st_dev dF_over_F means")
 writeData(wb, sheet = "st_dev dF_over_F means", posthoc$emmeans)
 addWorksheet(wb, "st_dev dF_over_F contrasts")
 writeData(wb, sheet = "st_dev dF_over_F contrasts", posthoc$contrasts)
-remove('posthoc') # too large for memory
+remove('posthoc')
 
 
 ##################### SAVE EVERYTHING TO EXCEL #####################

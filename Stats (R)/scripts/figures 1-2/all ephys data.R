@@ -9,12 +9,12 @@ library('openxlsx')
 
 ##################### LOAD DATA FOR LFP #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/LFP_power_MI.xlsx")
+data <- read.xlsx("LFP + SUA/LFP_power_MI in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 frequency <- factor(data$Frequency)
 power <- data$Power
-excel_file <- "E:/Calcium Imaging/stats/stats summary/all ephys data.xlsx"
+excel_file <- "where to save resuts"
 wb <- createWorkbook()
 
 
@@ -33,11 +33,11 @@ writeData(wb, sheet = "LFP power contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR ACTIVE PERIODS #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/Active_periods_MI.xlsx")
+data <- read.xlsx("LFP + SUA/Active_periods_MI in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 time <- factor(data$Time)
-active_periods <- data$`%.active.period`
+active_periods <- data$active.period
 
 
 model <- lmer(active_periods ~ time * condition + (1 | mouse)) # fit the model
@@ -55,7 +55,7 @@ writeData(wb, sheet = "active periods contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR PAC #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/PAC_MI.xlsx")
+data <- read.xlsx("LFP + SUA/PAC_MI in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 frequency <- factor(data$Frequency)
@@ -77,7 +77,7 @@ writeData(wb, sheet = "PAC contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR FIRING RATE #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/FiringRate_long.xlsx")
+data <- read.xlsx("LFP + SUA/FiringRate_long in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 unit <- factor(data$Unit)
@@ -99,7 +99,7 @@ writeData(wb, sheet = "firing rate contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR ACTIVE UNITS #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/Active_units_long.xlsx")
+data <- read.xlsx("LFP + SUA/Active_units_long in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 time <- factor(data$Time)
@@ -121,7 +121,7 @@ writeData(wb, sheet = "active_units contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR SUA POWER #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/SUA_power_long.xlsx")
+data <- read.xlsx("LFP + SUA/SUA_power_long in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 frequency <- factor(data$Frequency)
@@ -143,7 +143,7 @@ writeData(wb, sheet = "SUA power contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR PPC #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/PPC_all_conditions_long.xlsx")
+data <- read.xlsx("LFP + SUA/PPC_all_conditions_long in this repo")
 condition <- factor(data$Group)
 mouse <- factor(data$Animal)
 frequency <- factor(data$Frequency)
@@ -170,11 +170,11 @@ saveWorkbook(wb = wb, excel_file)
 
 ##################### LOAD DATA FOR LFP #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/LFP/fixed/slope.xlsx")
+data <- read.xlsx("LFP + SUA/slope in this repo")
 condition <- factor(data$condition)
 mouse <- factor(data$mouse)
 slope <- data$slope
-excel_file <- "E:/Calcium Imaging/stats/stats summary/slope.xlsx"
+excel_file <- "where to save resuts"
 wb <- createWorkbook()
 
 

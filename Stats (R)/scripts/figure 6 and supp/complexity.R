@@ -9,7 +9,7 @@ library('openxlsx')
 
 ##################### LOAD DATA FOR COMPLEXITY #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/figure 6/complexity.xlsx")
+data <- read.xlsx("communities/complexity in this repo")
 condition <- factor(data$condition)
 mouse <- factor(data$mouse)
 affinity.traces <- data$affinity.traces
@@ -17,7 +17,7 @@ pca.traces <- data$pca.traces
 tsne.traces <- data$tsne.traces
 affinity.spikes <- data$affinity.spikes
 tsne.spikes <- data$tsne.spikes
-excel_file <- "E:/Calcium Imaging/stats/stats summary/figure6.xlsx"
+excel_file <- "where to save results"
 wb <- createWorkbook()
 
 ##################### affinity.traces #####################
@@ -92,7 +92,7 @@ writeData(wb, sheet = "tsne.spikes contrasts", posthoc$contrasts)
 
 ##################### LOAD DATA FOR EXPLAINED VAR #####################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/figure 6/slope_var.xlsx")
+data <- read.xlsx("communities/slope_var in this repo")
 condition <- factor(data$condition)
 mouse <- factor(data$mouse)
 slope.var <- data$slope.var
