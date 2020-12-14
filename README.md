@@ -1,4 +1,4 @@
-# Anesthetics uniquely decorrelate hippocampal networkactivity, alter spine dynamics and affect memory consolidation
+# Anesthetics uniquely decorrelate hippocampal network activity, alter spine dynamics and affect memory consolidation
 
 This repository contains code that was used to analyze calcium imaging data for the calcium imaging data of the paper "Anesthetics uniquely decorrelate hippocampal networkactivity, alter spine dynamics and affect memory consolidation".
 
