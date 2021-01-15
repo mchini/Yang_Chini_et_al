@@ -3,7 +3,7 @@
 This repository contains code related to the paper "Anesthetics fragment hippocampal networkactivity, alter spine dynamics and affect memory consolidation".
 The manuscript is available here: https://www.biorxiv.org/content/10.1101/2020.06.05.135905v1
 
-![](with alignment.gif)
+![] (with_alignment.gif)
 
 Scripts and datasets that were used for all statistical analysis are available in the folder "Stats".
 
