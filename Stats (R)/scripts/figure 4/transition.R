@@ -14,7 +14,7 @@ wb <- createWorkbook()
 ################### LOAD DATA FOR TRANSITION STUFF ##################
 #####################################################################
 
-data <- read.xlsx("E:/Calcium Imaging/stats/datasets/transition/transition_state_modulation_index.xlsx")
+data <- read.xlsx("E:/Calcium Imaging/stats/datasets/transients/transition_state_modulation_index.xlsx")
 data = data[complete.cases(data),]
 condition <- factor(data$condition)
 mouse <- factor(data$animal)
