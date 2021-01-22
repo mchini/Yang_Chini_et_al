@@ -3,6 +3,10 @@
 This repository contains code related to the paper "Anesthetics fragment hippocampal network activity, alter spine dynamics and affect memory consolidation".
 The manuscript is available here: https://www.biorxiv.org/content/10.1101/2020.06.05.135905v1
 
+### Analysis pipeline
+
+Click on the image below to open an interactive chart: 
+
 [<img src="Yang_Chini_software.svg">](https://raw.githubusercontent.com/mchini/Yang_Chini_et_al/testTransition/Yang_Chini_software.svg)
 
 Code to align calcium imaging recordings from different sessions but with the same FOV is in the [Alignment](https://github.com/mchini/Yang_Chini_et_al/tree/master/Alignment%20Scripts%20(Python)) folder.
