@@ -5,7 +5,7 @@ The manuscript is available here: https://www.biorxiv.org/content/10.1101/2020.0
 
 ### Analysis pipeline
 
-Click on the image below to open an interactive chart: 
+Click on the image below to open it in interactive mode: 
 
 [<img src="Yang_Chini_software.svg">](https://raw.githubusercontent.com/mchini/Yang_Chini_et_al/testTransition/Yang_Chini_software.svg)
 
