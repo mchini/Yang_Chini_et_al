@@ -7,7 +7,7 @@ The manuscript is available here: https://www.biorxiv.org/content/10.1101/2020.0
 
 Click on the image below to open it in interactive mode: 
 
-[<img src="Yang_Chini_software.svg">](https://formozov.github.io/)
+[<img src="Yang_Chini_software.svg">](https://formozov.github.io/Yang_Chini_software.html)
 
 ### Alignment of recordings across imaging sessions
 
