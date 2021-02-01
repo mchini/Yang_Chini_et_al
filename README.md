@@ -21,7 +21,7 @@ Before alignment             |  After alignment
 
 Python code for analysis of calcium transients and correlation matrices is in [Figures 3-5](https://github.com/mchini/Yang_Chini_et_al/tree/master/Figures%203-5%20(Python)) folder
 
-![](correlations_small.png)
+![](correlations_small.png =1200x)
 
 ### Clustering and classification
 
