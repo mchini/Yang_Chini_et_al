@@ -17,6 +17,7 @@ Before alignment             |  After alignment
 :-------------------------:|:-------------------------:
 ![](no_alignment.gif)  |  ![](with_alignment.gif)
 
+
 ### Analysis of calcium transients and their correlations
 
 Python code for analysis of calcium transients and correlation matrices is in [Figures 3-5](https://github.com/mchini/Yang_Chini_et_al/tree/master/Figures%203-5%20(Python)) folder
@@ -38,3 +39,9 @@ Further Matlab code that was used for the ephys-part of the paper can be found i
 R scripts and datasets that were used for all statistical analysis are available in the [Stats](https://github.com/mchini/Yang_Chini_et_al/tree/master/Stats%20(R)) folder.
 
 Raw 2-photon and electrophysiology data is available at this [repository](https://gin.g-node.org/SW_lab/Anesthesia_CA1/) on GIN.
+
+### Notebooks
+
+The code for notebooks is availible here:
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AlexEMG/DeepLabCut/blob/master/examples/COLAB_YOURDATA_TrainNetwork_VideoAnalysis.ipynb)
