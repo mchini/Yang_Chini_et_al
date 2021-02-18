@@ -44,4 +44,4 @@ Raw 2-photon and electrophysiology data is available at this [repository](https:
 
 The code for notebooks is availible here:
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AlexEMG/DeepLabCut/blob/master/examples/COLAB_YOURDATA_TrainNetwork_VideoAnalysis.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//mchini/Yang_Chini_et_al/blob/testTransition/notebooks/single-neuron-level_analysis.ipynb)
