@@ -42,6 +42,20 @@ Raw 2-photon and electrophysiology data is available at this [repository](https:
 
 ### Notebooks
 
-The code for notebooks is availible here:
+**Stability of recordgins and feature extraction**
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//mchini/Yang_Chini_et_al/blob/testTransition/notebooks/single-neuron-level_analysis.ipynb)
+This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsiquest analysis it's variations and stability.     
+
+(notebooks/feature_extraction.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/feature_extraction.ipynb)
+
+**Analysis of neuronal activity on single neuron level**
+
+Extraction of the main features permits the analysis of the recordings on both population and single neuron levels.
+ 
+(notebooks/single-neuron-level_analysis.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/single-neuron-level_analysis.ipynb)
+
+
