@@ -472,23 +472,11 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     
     return  df_estimators ,df_corr
 
-def get_raster(recording,n_neurons_max,database_path, concatenation=True):
+def get_raster(starting_recording, n_neurons_max,database_path, concatenation):
     
-    traces, npil, number_of_neruons = traces_and_npils(starting_recording+j, database_path, concatenation=True)
+    traces, npil, number_of_neruons = traces_and_npils(starting_recording, database_path, concatenation)
                                                        
     Tm0p7N = traces - 0.7*npil
- 
-    if (j==0):
-   
-        baseline = np.quantile(Tm0p7N,0.25,axis=1)
-
-        print("Median baseline: {:.2f}".format(np.median(baseline)))
-
-        Baseline_subtracted = Tm0p7N.copy() 
-
-        for i in range(Baseline_subtracted.shape[0]):
-            Baseline_subtracted[i,:] -= baseline[i]
-            Baseline_subtracted[i,:] /= baseline[i] 
 
     Tm0p7N = zscore(Tm0p7N,axis=1)   
     Tm0p7N = np.reshape(Tm0p7N,(Tm0p7N.shape[0], 500,10)).mean(axis=2)
