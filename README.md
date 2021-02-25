@@ -42,7 +42,7 @@ Raw 2-photon and electrophysiology data is available at this [repository](https:
 
 ### Notebooks
 
-**Stability of recordgins and feature extraction**
+**Stability of recorddings and feature extraction**
 
 This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsiquest analysis it's variations and stability.     
 
