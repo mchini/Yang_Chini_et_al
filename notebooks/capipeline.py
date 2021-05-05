@@ -59,9 +59,9 @@ def traces_and_npils(recording, path, concatenation=True):
         path_excel_rec = str(meta_data['Folder'][recording] + meta_data['Subfolder'][recording] + 'suite2p/plane0')
         
         stats = np.load(path_excel_rec + '/stat.npy',allow_pickle=True)
-        Traces = np.load(path_excel_rec + '/F.npy')
-        Npil = np.load(path_excel_rec + '/Fneu.npy')
-        iscell = np.load(path_excel_rec + '/iscell.npy')
+        Traces = np.load(path_excel_rec + '/F.npy',allow_pickle=True)
+        Npil = np.load(path_excel_rec + '/Fneu.npy',allow_pickle=True)
+        iscell = np.load(path_excel_rec + '/iscell.npy',allow_pickle=True)
         
         print("Total trace length: " + str(Traces.shape[1]))
         
@@ -120,9 +120,9 @@ def traces_and_npils(recording, path, concatenation=True):
                     str(int(meta_data['Recording idx'][recording])) + '/suite2p/plane0')
     
         stats = np.load(path_excel_rec + '/stat.npy',allow_pickle=True)
-        Traces = np.load(path_excel_rec + '/F.npy')
-        Npil = np.load(path_excel_rec + '/Fneu.npy')
-        iscell = np.load(path_excel_rec + '/iscell.npy')
+        Traces = np.load(path_excel_rec + '/F.npy',allow_pickle=True)
+        Npil = np.load(path_excel_rec + '/Fneu.npy',allow_pickle=True)
+        iscell = np.load(path_excel_rec + '/iscell.npy',allow_pickle=True)
         
         n_accepted_rejected = Traces.shape[0]
         Traces = Traces[iscell[:, 0].astype(bool), :]
@@ -163,7 +163,7 @@ def median_stabilities(Npils):
 
     return median_stabilities
 
-def get_data_frame(recording, path, threshold=200, baseline_correction=True, concatination=True):
+def get_data_frame(recording, path, threshold=200, baseline_correction=True, concatenation=True, correlations = True):
     
     df_estimators = pd.DataFrame()
 
@@ -179,7 +179,7 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     
     plt.cla()
     
-    Traces, Npils, n_accepted_and_rejected = traces_and_npils(r, path, concatination)
+    Traces, Npils, n_accepted_and_rejected = traces_and_npils(r, path, concatenation)
 
     Tm0p7N = Traces - 0.7*Npils
     
@@ -290,48 +290,48 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     intercept = ma.zeros(Npils.shape[0])
     residuals = ma.zeros(Npils.shape[0])
 
-    
-    #Replace with smarter solution to take into account correlations with other neurons.
-    Tcorr = np.corrcoef(Traces).flatten()
-    Ncorr = np.corrcoef(Npils).flatten()
-    
-    Tm0p7Ncorr_mean = np.mean(np.corrcoef(Tm0p7N),axis=1)
-    
-    Tm0p7Ncorr = np.corrcoef(Tm0p7N).flatten()
-    
-    Tm0p7Ncorr[Tm0p7Ncorr>0.99999] = np.nan
-    
-    Tm0p7Ncorr_first100 = np.corrcoef(Tm0p7N[:100,:]).flatten()
-    
-    Tm0p7Ncorr_first100 [Tm0p7Ncorr_first100>0.99999] = np.nan
-       
-        #quick trick
-    
-    #print(Tm0p7N.shape)
-    
-    #Tm0p7N_10bins = Tm0p7N.reshape(Tm0p7N.shape[0],int(Tm0p7N.shape[1]/10),10).mean(axis=2) 
-    
-   # print(Tm0p7N_10bins.shape)
-    
-    #Tm0p7Ncorr_10bins = np.corrcoef(Tm0p7N_10bins).flatten()
-    
-   # Tm0p7Ncorr_10bins[Tm0p7Ncorr_10bins>0.99999] = np.nan
-
-    
-    
-    df_corr =  pd.DataFrame({ "animal":animal,
-                        "recording":r,
-                        "condition":condition,
-                        #"Tcorr":Tcorr,
-                        #"Ncorr":Ncorr,
-                        #"Tm0p7Ncorr":Tm0p7Ncorr,
-                        #"Tm0p7Ncorr.abs":np.absolute(Tm0p7Ncorr)
-                             
-                        "Tm0p7Ncorr":Tm0p7Ncorr,
-                        "Tm0p7Ncorr.abs":np.absolute(Tm0p7Ncorr)  
-                          #          "Tm0p7Ncorr_10bins":Tm0p7Ncorr_10bins,
-                        #"Tm0p7Ncorr_10bins.abs":np.absolute(Tm0p7Ncorr_10bins) 
-                            
+    if correlations: 
+	    #Replace with smarter solution to take into account correlations with other neurons.
+	    Tcorr = np.corrcoef(Traces).flatten()
+	    Ncorr = np.corrcoef(Npils).flatten()
+	    
+	    Tm0p7Ncorr_mean = np.mean(np.corrcoef(Tm0p7N),axis=1)
+	    
+	    Tm0p7Ncorr = np.corrcoef(Tm0p7N).flatten()
+	    
+	    Tm0p7Ncorr[Tm0p7Ncorr>0.99999] = np.nan
+	    
+	    Tm0p7Ncorr_first100 = np.corrcoef(Tm0p7N[:100,:]).flatten()
+	    
+	    Tm0p7Ncorr_first100 [Tm0p7Ncorr_first100>0.99999] = np.nan
+	       
+	        #quick trick
+	    
+	    #print(Tm0p7N.shape)
+	    
+	    #Tm0p7N_10bins = Tm0p7N.reshape(Tm0p7N.shape[0],int(Tm0p7N.shape[1]/10),10).mean(axis=2) 
+	    
+	   # print(Tm0p7N_10bins.shape)
+	    
+	    #Tm0p7Ncorr_10bins = np.corrcoef(Tm0p7N_10bins).flatten()
+	    
+	   # Tm0p7Ncorr_10bins[Tm0p7Ncorr_10bins>0.99999] = np.nan
+	
+	    
+	    
+	    df_corr =  pd.DataFrame({ "animal":animal,
+	                        "recording":r,
+	                        "condition":condition,
+	                        #"Tcorr":Tcorr,
+	                        #"Ncorr":Ncorr,
+	                        #"Tm0p7Ncorr":Tm0p7Ncorr,
+	                        #"Tm0p7Ncorr.abs":np.absolute(Tm0p7Ncorr)
+	                             
+	                        "Tm0p7Ncorr":Tm0p7Ncorr,
+	                        "Tm0p7Ncorr.abs":np.absolute(Tm0p7Ncorr)  
+	                          #          "Tm0p7Ncorr_10bins":Tm0p7Ncorr_10bins,
+	                        #"Tm0p7Ncorr_10bins.abs":np.absolute(Tm0p7Ncorr_10bins) 
+	                            
                             })
                              
     i=0
@@ -363,8 +363,8 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     
     integral = np.zeros((num_cells))
 
-    from oasis.functions import deconvolve
-    from oasis.functions import estimate_time_constant
+    #from oasis.functions import deconvolve
+    #from oasis.functions import estimate_time_constant
     
     for neuron in range(num_cells):
        
@@ -457,7 +457,7 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
                         "baseline.oasis":baseline_oasis,
                         "integral":integral,
                        
-                        "Tm0p7Ncorr.mean":Tm0p7Ncorr_mean,
+                        #"Tm0p7Ncorr.mean":Tm0p7Ncorr_mean,
                        
                            ### decay constant and peak characterization
                         "peak_detection_threshold":threshold,
