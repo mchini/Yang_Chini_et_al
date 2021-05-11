@@ -56,6 +56,6 @@ Extraction of the main features permits the analysis of the recordings on both p
  
 (notebooks/single-neuron-level_analysis.ipynb)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/single-neuron-level_analysis.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/analysis_pipeline_for_concatenated_recordings.ipynb)
 
 
