@@ -40,22 +40,35 @@ R scripts and datasets that were used for all statistical analysis are available
 
 Raw 2-photon and electrophysiology data is available at this [repository](https://gin.g-node.org/SW_lab/Anesthesia_CA1/) on GIN.
 
-### Notebooks
+## Notebooks
 
-**Stability of recorddings and feature extraction**
+**Validation of calcium recordings: homogeneity and stability**
 
-This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsiquest analysis it's variations and stability.     
+This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsiquest analysis it's variations and stability.    
 
-(notebooks/feature_extraction.ipynb)
+(notebooks/Validation_stability.ipynb)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/feature_extraction.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/Validation_stability.ipynb)
+
+**Validation of calcium recordings field of view alignment)**
+
+This notebook contains the code for the aligment of field of view between recordings.
+
+(notebooks/Validation_FOV_alignment.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/Validation_FOV_alignment.ipynb)
+
+**Validation of calcium recordings: motion)**
+
+(notebooks/Validation_motion.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/Validation_motion.ipynb)
 
 **Analysis of neuronal activity on single neuron level**
 
 Extraction of the main features permits the analysis of the recordings on both population and single neuron levels.
  
 (notebooks/single-neuron-level_analysis.ipynb)
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/analysis_pipeline_for_concatenated_recordings.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/single-neuron-level_analysis.ipynb)
 
 

@@ -58,7 +58,7 @@ def traces_and_npils(recording, path, concatenation=True):
         
         path_excel_rec = str(meta_data['Folder'][recording] + meta_data['Subfolder'][recording] + 'suite2p/plane0')
         
-        stats = np.load(path_excel_rec + '/stat.npy',allow_pickle=True)
+  
         Traces = np.load(path_excel_rec + '/F.npy',allow_pickle=True)
         Npil = np.load(path_excel_rec + '/Fneu.npy',allow_pickle=True)
         iscell = np.load(path_excel_rec + '/iscell.npy',allow_pickle=True)
@@ -119,7 +119,7 @@ def traces_and_npils(recording, path, concatenation=True):
         path_excel_rec = str(meta_data['Folder'][recording] + meta_data['Subfolder'][recording] +
                     str(int(meta_data['Recording idx'][recording])) + '/suite2p/plane0')
     
-        stats = np.load(path_excel_rec + '/stat.npy',allow_pickle=True)
+
         Traces = np.load(path_excel_rec + '/F.npy',allow_pickle=True)
         Npil = np.load(path_excel_rec + '/Fneu.npy',allow_pickle=True)
         iscell = np.load(path_excel_rec + '/iscell.npy',allow_pickle=True)
