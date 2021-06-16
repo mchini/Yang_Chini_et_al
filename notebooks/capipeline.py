@@ -125,10 +125,11 @@ def traces_and_npils(recording, path, concatenation=True):
         iscell = np.load(path_excel_rec + '/iscell.npy',allow_pickle=True)
         
         n_accepted_rejected = Traces.shape[0]
+        
         Traces = Traces[iscell[:, 0].astype(bool), :]
         Npil = Npil[iscell[:, 0].astype(bool), :]   
 
-        
+    print("fuction: n_accepted_rejected",n_accepted_rejected)   
     return Traces, Npil, n_accepted_rejected # n_accepted_rejected = Accepted + Rejected
 
 def median_stabilities(Npils):
@@ -245,10 +246,16 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
  
     
     n_accepted = Traces.shape[0]
+
+    print("n_accepted ",n_accepted )  
     
     neuronID = ma.arange(n_accepted)
+
+    print("neuronID",neuronID)  
     
     n_accepted_and_rejected = n_accepted_and_rejected
+
+    print("n_accepted_and_rejected",n_accepted_and_rejected)  
     
     Traces_median = ma.median(Traces, axis=1) 
     Npils_median = ma.median(Npils, axis=1) 
