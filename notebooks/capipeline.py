@@ -129,7 +129,7 @@ def traces_and_npils(recording, path, concatenation=True):
         Traces = Traces[iscell[:, 0].astype(bool), :]
         Npil = Npil[iscell[:, 0].astype(bool), :]   
 
-    print("fuction: n_accepted_rejected",n_accepted_rejected)   
+       
     return Traces, Npil, n_accepted_rejected # n_accepted_rejected = Accepted + Rejected
 
 def median_stabilities(Npils):
@@ -247,15 +247,15 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     
     n_accepted = Traces.shape[0]
 
-    print("n_accepted ",n_accepted )  
-    
-    neuronID = ma.arange(n_accepted)
+   
 
-    print("neuronID",neuronID)  
-    
+    neuronID_accepted = ma.arange(n_accepted)
+
     n_accepted_and_rejected = n_accepted_and_rejected
-
-    print("n_accepted_and_rejected",n_accepted_and_rejected)  
+  
+    print("Total number of neruons: ",n_accepted_rejected)
+    print("Number of accepted neurons: ",n_accepted )
+    print("Number of rejected neurons: ", n_accepted_rejected - n_accepted)
     
     Traces_median = ma.median(Traces, axis=1) 
     Npils_median = ma.median(Npils, axis=1) 
@@ -423,7 +423,7 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
     df_estimators = pd.DataFrame({ "animal":animal,
                         "recording":r,
                         "condition":condition,
-                        "neuronID":neuronID,
+                        "neuronID_accepted":neuronID_accepted,
                         "n.accepted":n_accepted,
                         "length.frames":recording_lenght,
                         "length.minutes":trace_len,
