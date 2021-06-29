@@ -1,0 +1,3 @@
+- name: Colab Badge Action
+  uses: trsvchn/colab-badge-action@v3.1
+
