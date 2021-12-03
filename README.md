@@ -48,7 +48,7 @@ Extraction of the main features permits the analysis of the recordings on both p
  
 (notebooks/analysis_pipeline_for_concatenated_recordings.ipynb)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/analysis_pipeline_for_concatenated_recordings.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/master/notebooks/analysis_pipeline_for_concatenated_recordings.ipynb)
 
 **Validation of calcium recordings: homogeneity and stability**
 
@@ -56,4 +56,4 @@ This notebook illustrates the extraction of the main features of the calcium tra
 
 (notebooks/Validation_stability.ipynb)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/testTransition/notebooks/Validation_stability.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mchini/Yang_Chini_et_al/blob/master/notebooks/Validation_stability.ipynb)
