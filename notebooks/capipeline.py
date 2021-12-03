@@ -251,7 +251,7 @@ def get_data_frame(recording, path, threshold=200, baseline_correction=True, con
 
     neuronID_accepted = ma.arange(n_accepted)
 
-    n_accepted_and_rejected = n_accepted_and_rejected
+    n_accepted_rejected = n_accepted_and_rejected
   
     print("Total number of neruons: ",n_accepted_rejected)
     print("Number of accepted neurons: ",n_accepted )
