@@ -42,7 +42,7 @@ Raw 2-photon and electrophysiology data is available at this [repository](https:
 
 ## Notebooks
 
-**Analysis of neuronal activity on single neuron level**
+**Analysis of neuronal activity on single neuron and population level**
 
 Extraction of the main features permits the analysis of the recordings on both population and single neuron levels.
  
@@ -52,7 +52,7 @@ Extraction of the main features permits the analysis of the recordings on both p
 
 **Validation of calcium recordings: homogeneity and stability**
 
-This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsiquest analysis it's variations and stability.    
+This notebook illustrates the extraction of the main features of the calcium traces for a large set of recordings and subsequent analysis of its variations and stability.    
 
 (notebooks/Validation_stability.ipynb)
 
