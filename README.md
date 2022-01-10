@@ -1,7 +1,7 @@
 # Anesthetics uniquely decorrelate hippocampal network activity, alter spine dynamics and affect memory consolidation
 
 This repository contains code related to the paper "Anesthetics fragment hippocampal network activity, alter spine dynamics and affect memory consolidation".
-The manuscript is available here: https://www.biorxiv.org/content/10.1101/2020.06.05.135905v1
+The manuscript is available here: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001146
 
 ## Analysis pipeline
 
